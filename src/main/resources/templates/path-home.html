@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{#{bootstrap.min.css}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div style="width:580px;margin: 100px auto;">
+    <form th:action method="post">
+        <input type="text" placeholder="window 경로를 입력해주세요." name="windowPath" th:value="${pathDto.windowPath}" style="width:300px;height:30px;font-size:20px;text-align:center;line-height: 30px;"/>
+        <input type="submit" value="변환" style="height:35px;font-size:20px;text-align:center;line-height: 30px;"/>
+    </form>
+    </div>
+    <div style="width:580px;margin: 100px auto;">
+        <input id="linuxPath" type="text" name="linuxPath" th:value="${pathDto.linuxPath}" readonly style="width:300px;height:30px;font-size:20px;text-align:center;line-height: 30px;">
+        <button type="button" class="copy-btn" style="height:35px;font-size:20px;text-align:center;line-height: 30px;">복사</button>
+    </div>
+</body>
+</html>
+
+<script th:src="#{path-home.js}"></script>
+
+<script type="module" src="milsymbol-2.0.0/src/milsymbol.js"></script>
+<!--Copyright (c) 2022 by good charlotte (https://codepen.io/lostinyou/pen/mdrrYEa) 복사 버튼 참조-->
