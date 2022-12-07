@@ -13,21 +13,12 @@ public class PathController {
 
     @GetMapping("/")
     public String pathHome(@ModelAttribute PathDto pathDto, Model model){
-        System.out.println("pathDto = " + pathDto.toString());
-        if (pathDto.getWindowPath() == null) {
-            pathDto.setWindowPath("");
-        }
-
-        String linuxPath = pathDto.getWindowPath().replace("\\", "/");
-        pathDto.setLinuxPath(linuxPath);
         model.addAttribute("pathDto", pathDto);
         return "path-home";
     }
 
     @PostMapping("/")
     public String postPathHome(@ModelAttribute PathDto pathDto, Model model){
-        System.out.println("pathDto = " + pathDto.toString());
-
         if (pathDto.getWindowPath() == null) {
             pathDto.setWindowPath("");
         }
